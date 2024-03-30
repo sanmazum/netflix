@@ -9,6 +9,12 @@
 -Form validation
 -useRef Hook
 
+- Firebase setup
+  -Deploying Our App to production (linked to: rony99sandy@gmail.com)
+  -Create Sign Up user Account
+  -Implement Sign In useer Api
+  -crated redux store with userSlice
+
 # Features
 
 - login/SignUp Page
