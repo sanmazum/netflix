@@ -7,9 +7,10 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../Utils/Firebase";
-
 import { useDispatch } from "react-redux";
 import { addUser } from "../Utils/userSlice";
+import { USER_AVTAR } from "../Utils/Constant";
+
 const Login = () => {
   const dispatch = useDispatch();
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -45,7 +46,7 @@ const Login = () => {
           const user = userCredential.user;
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL: "https://avatars.githubusercontent.com/u/155097600?v=4",
+            photoURL: USER_AVTAR,
           })
             .then(() => {
               // Profile updated, then navigate to browse
