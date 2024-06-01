@@ -9,7 +9,7 @@ import {
 import { auth } from "../Utils/Firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../Utils/userSlice";
-import { USER_AVTAR } from "../Utils/Constant";
+import { USER_AVTAR, background_image_url } from "../Utils/Constant";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -100,7 +100,7 @@ const Login = () => {
           alt="background-Image"
           aria-hidden="true"
           data-uia="nmhp-card-hero+background+image"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/9d3533b2-0e2b-40b2-95e0-ecd7979cc88b/a3873901-5b7c-46eb-b9fa-12fea5197bd3/IN-en-20240311-popsignuptwoweeks-perspective_alpha_website_small.jpg"
+          src={background_image_url}
         />
       </div>
       <form
