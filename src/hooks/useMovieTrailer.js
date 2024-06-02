@@ -1,10 +1,14 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { API_OPTIONS } from "../Utils/Constant";
 import { addTrailerVideo } from "../Utils/movieSlice";
 
 const useMovieTrailer = (movieId) => {
   const dispatch = useDispatch();
+
+  // using the concept of memoization - to minimize the unnecessary API calls when we already have the data present in the redux store
+
+  const trailerVideos = useSelector((store) => store.movies.trailerVideo);
 
   const getMovieVideos = async () => {
     const data = await fetch(
@@ -24,7 +28,7 @@ const useMovieTrailer = (movieId) => {
   };
 
   useEffect(() => {
-    getMovieVideos();
+    if (!trailerVideos) getMovieVideos();
   }, []);
 };
 
