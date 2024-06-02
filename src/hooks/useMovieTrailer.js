@@ -8,7 +8,7 @@ const useMovieTrailer = (movieId) => {
 
   // using the concept of memoization - to minimize the unnecessary API calls when we already have the data present in the redux store
 
-  const trailerVideos = useSelector((store) => store.movies.trailerVideo);
+  const trailerVideo = useSelector((store) => store.movies.trailerVideo);
 
   const getMovieVideos = async () => {
     const data = await fetch(
@@ -28,7 +28,7 @@ const useMovieTrailer = (movieId) => {
   };
 
   useEffect(() => {
-    if (!trailerVideos) getMovieVideos();
+    if (!trailerVideo) getMovieVideos();
   }, []);
 };
 

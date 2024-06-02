@@ -61,10 +61,10 @@ const Header = () => {
   };
 
   return (
-    <div className=" absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between">
-      <img className="w-44" src={Netflix_LOGO} alt="logo" />
+    <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row justify-between">
+      <img className="w-44 mx-auto md:mx-0" src={Netflix_LOGO} alt="logo" />
       {user && (
-        <div className="flex p-2">
+        <div className="flex p-2 justify-between">
           {showGptSearch && ( // showing the language change only when showGptSearch is true
             <select
               className="p-2 m-2 bg-gray-900 text-white"
@@ -83,7 +83,11 @@ const Header = () => {
           >
             {showGptSearch ? "HomePage" : "GPT Search"}
           </button>
-          <img className="w-12 h-12" src={user?.photoURL} alt="user-icon" />
+          <img
+            className="hidden md:block w-12 h-12"
+            src={user?.photoURL}
+            alt="user-icon"
+          />
           <button onClick={handleSignOut} className="font-bold text-white">
             Sign Out
           </button>
